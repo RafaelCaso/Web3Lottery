@@ -7,6 +7,8 @@ import { WalletInfo } from "~~/components/WalletInfo";
 import { CheckLotteryState } from "~~/components/CheckLotteryState";
 import { OpenLottery } from "~~/components/OpenLottery";
 import { CloseLottery } from "~~/components/CloseLotery";
+import { PurchaseTokens } from "~~/components/PurchaseTokens";
+import { DisplayTokenBalance } from "~~/components/DisplayTokenBalance";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
@@ -27,6 +29,10 @@ const Home: NextPage = () => {
 
           <OpenLottery />
           <CloseLottery />
+
+          {connectedAddress && <PurchaseTokens address={connectedAddress as `0x${string}`}/>}
+
+          {connectedAddress && <DisplayTokenBalance address={connectedAddress as `0x${string}`}/>}
 
 
         </div>

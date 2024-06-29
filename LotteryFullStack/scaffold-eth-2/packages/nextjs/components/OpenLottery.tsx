@@ -17,13 +17,14 @@ export const OpenLottery: NextPage = () => {
     })
     .then((res) => {
       if(!res.ok) {
+        setFeedback("An error has occured.")
         throw new Error("cannot post request")
       }
 
       return res.json();
     })
     .then((data) => {
-      setFeedback("Participants may now begin placing bets")
+      setFeedback("Participants may now begin placing bets!")
       setTime(0);
     })
   }
