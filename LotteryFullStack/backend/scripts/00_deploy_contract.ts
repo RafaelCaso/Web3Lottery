@@ -12,8 +12,8 @@ const deployerPrivateKey = process.env.DEPLOYER_PRIVATE_KEY || "";
 
 const TOKEN_NAME = "JamToken";
 const TOKEN_SYMBOL = "JAM";
-const BET_PRICE = "1";
-const BET_FEE = "0.2";
+const BET_PRICE = "0.1";
+const BET_FEE = "0.02";
 const TOKEN_RATIO = 1n;
 
 async function main() {

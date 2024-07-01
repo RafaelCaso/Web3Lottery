@@ -30,6 +30,16 @@ export class AppController {
   async tokenBalance(@Query('address') address: Address) {
     return {result: await this.appService.tokenBalance(address as `0x${string}`)}
   }
+
+  @Post('bet')
+  async bet(@Query('address') address: Address, @Query('amount') amount: number) {
+    return {result: await this.appService.bet(amount, address as `0x${string}` )}
+  }
+
+  @Get('read-winner')
+  async readWinner() {
+    return {result: await this.appService.readWinner()}
+  }
 }
 
 
